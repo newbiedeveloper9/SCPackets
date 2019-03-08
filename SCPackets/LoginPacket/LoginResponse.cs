@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.CodeDom;
 using Network.Attributes;
 using Network.Packets;
 
@@ -14,9 +10,12 @@ namespace SCPackets.LoginPacket
         public LoginResponse(Result result, LoginRequest request)
             : base(request)
         {
-            Result = result;
+            ResultInt = (int)result;
         }
+       
+        public int ResultInt { get; set; }
 
-        public Result Result { get; set; }
+        [PacketIgnoreProperty]
+        public Result Result => (Result) ResultInt;
     }
 }

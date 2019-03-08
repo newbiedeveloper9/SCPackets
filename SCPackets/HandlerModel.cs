@@ -23,7 +23,7 @@ namespace SCPackets
 
         public void RegisterPacket(Connection conn)
         {
-            conn.RegisterPacketHandler(_packetHandler, this);
+            conn.RegisterStaticPacketHandler(_packetHandler);
         }
         public void RegisterPacket(Connection conn, IClient client)
         {

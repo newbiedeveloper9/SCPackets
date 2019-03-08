@@ -77,9 +77,15 @@
     <Compile Include="LoginPacket\LoginResponse.cs" />
     <Compile Include="LoginPacket\Result.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterPacket\RegisterRequest.cs" />
+    <Compile Include="RegisterPacket\RegisterResponse.cs" />
+    <Compile Include="RegisterPacket\Result.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
