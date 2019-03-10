@@ -71,6 +71,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateRoom\Container\RoomModel.cs" />
+    <Compile Include="CreateRoom\CreateRoomRequest.cs" />
+    <Compile Include="CreateRoom\CreateRoomResponse.cs" />
+    <Compile Include="CreateRoom\Container\Result.cs" />
     <Compile Include="HandlerModel.cs" />
     <Compile Include="IClient.cs" />
     <Compile Include="LoginPacket\LoginRequest.cs" />
@@ -82,12 +86,11 @@
     <Compile Include="RegisterPacket\RegisterResponse.cs" />
     <Compile Include="RegisterPacket\Result.cs" />
     <Compile Include="UserClient.cs" />
+    <Compile Include="DataValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

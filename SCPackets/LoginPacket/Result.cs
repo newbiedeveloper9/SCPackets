@@ -1,10 +1,9 @@
 ﻿namespace SCPackets.LoginPacket
 {
-    public enum Result : int
+    public enum Result
     {
-        Success = 0,
-        Error = 1,
-        test = 2,
-        xd = 3,
+        Success,
+        Error,
+        AlreadyLogged,
     }
 }
