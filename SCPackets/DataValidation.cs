@@ -35,12 +35,16 @@ namespace SCPackets
 
         public static bool ImageIsValid(string url)
         {
+            bool result = Uri.TryCreate(url, UriKind.Absolute, out var uriResult)
+                          && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+            if (!result) return false;
+
             var req = (HttpWebRequest)HttpWebRequest.Create(url);
             req.Method = "HEAD";
             using (var resp = req.GetResponse())
             {
                 return resp.ContentType.ToLower(CultureInfo.InvariantCulture)
-                           .StartsWith("image/", StringComparison.OrdinalIgnoreCase);
+                    .StartsWith("image/", StringComparison.OrdinalIgnoreCase);
             }
         }
     }

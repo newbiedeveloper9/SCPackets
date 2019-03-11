@@ -80,6 +80,7 @@
     <Compile Include="LoginPacket\LoginRequest.cs" />
     <Compile Include="LoginPacket\LoginResponse.cs" />
     <Compile Include="LoginPacket\Result.cs" />
+    <Compile Include="NotLoggedInRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rank.cs" />
     <Compile Include="RegisterPacket\RegisterRequest.cs" />
