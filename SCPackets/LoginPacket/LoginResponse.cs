@@ -17,8 +17,8 @@ namespace SCPackets.LoginPacket
             
         }
 
-        public List<RoomOutsideModel> RoomOutsideModelList { get; set; }
-        public UserClient User { get; set; }
+        public List<RoomOutsideModel> RoomOutsideModelList { get; set; } = new List<RoomOutsideModel>();
+        public UserClient User { get; set; } = new UserClient();
 
         public int ResultTmp { get; set; }
 
