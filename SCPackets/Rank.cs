@@ -2,7 +2,7 @@
 {
     public enum Rank
     {
-        User,
+        User = 0,
         Moderator,
         Admin
     }

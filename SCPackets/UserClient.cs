@@ -1,4 +1,6 @@
-﻿namespace SCPackets
+﻿using Network.Attributes;
+
+namespace SCPackets
 {
     public class UserClient
     {
@@ -11,21 +13,30 @@
         {
             Id = id;
             Username = username;
-            Rank = rank;
+            RankTmp = (int)rank;
         }
 
         public long Id { get; set; }
         public string Username { get; set; }
-        public Rank Rank { get; set; } = Rank.User;
 
-        public override bool Equals(object obj)
+        [PacketIgnoreProperty]
+        public Rank Rank => (Rank)RankTmp;
+        public int RankTmp { get; set; }
+
+        protected bool Equals(UserClient other)
         {
-            if (!(obj is UserClient)) return false;
-            var eq = (UserClient)obj;
+            return Id == other.Id && string.Equals(Username, other.Username) && Rank == other.Rank;
+        }
 
-            return Rank == eq.Rank &&
-                   Username == eq.Username &&
-                   Id == eq.Id;
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = Id.GetHashCode();
+                hashCode = (hashCode * 397) ^ (Username != null ? Username.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (int)Rank;
+                return hashCode;
+            }
         }
     }
 }

@@ -32,7 +32,6 @@ namespace SCPackets
 
         private void Handler(TReq packet, Connection connection)
         {
-
             //TODO: add logging
             Action?.Invoke(packet, connection);
         }

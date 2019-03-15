@@ -1,4 +1,4 @@
-﻿namespace SCPackets.LoginPacket
+﻿namespace SCPackets.LoginPacket.Container
 {
     public enum Result
     {
