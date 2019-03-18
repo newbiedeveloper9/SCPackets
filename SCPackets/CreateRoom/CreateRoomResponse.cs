@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Network.Attributes;
 using Network.Packets;
+using SCPackets.CreateRoom.Container;
 using SCPackets.LoginPacket;
 using Result = SCPackets.CreateRoom.Container.Result;
 
@@ -20,6 +21,7 @@ namespace SCPackets.CreateRoom
             ResultTmp = (int)result;
         }
 
+        public RoomModel Room { get; set; } = new RoomModel();
         public int ResultTmp { get; set; }
 
         [PacketIgnoreProperty] public Result Result => (Result) ResultTmp;

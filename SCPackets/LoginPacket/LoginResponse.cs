@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Network.Attributes;
 using Network.Packets;
-using SCPackets.LoginPacket.Container;
+using SCPackets.CreateRoom.Container;
 using SCPackets.Models;
+using Result = SCPackets.LoginPacket.Container.Result;
 
 namespace SCPackets.LoginPacket
 {
@@ -14,10 +15,10 @@ namespace SCPackets.LoginPacket
             : base(request)
         {
             ResultTmp = (int)result;
-            
         }
 
         public List<RoomOutsideModel> RoomOutsideModelList { get; set; } = new List<RoomOutsideModel>();
+        public List<RoomModel> UserRoomList { get; set; } = new List<RoomModel>();
         public UserClient User { get; set; } = new UserClient();
 
         public int ResultTmp { get; set; }

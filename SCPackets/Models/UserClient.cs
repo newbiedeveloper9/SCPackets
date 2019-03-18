@@ -1,6 +1,6 @@
 ﻿using Network.Attributes;
 
-namespace SCPackets
+namespace SCPackets.Models
 {
     public class UserClient
     {

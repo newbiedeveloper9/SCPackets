@@ -1,4 +1,4 @@
-﻿namespace SCPackets
+﻿namespace SCPackets.Models
 {
     public enum Rank
     {
