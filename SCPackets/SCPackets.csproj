@@ -44,7 +44,7 @@
       <HintPath>..\packages\32feet.NET.3.5.0.0\lib\net\InTheHand.Net.Personal.dll</HintPath>
     </Reference>
     <Reference Include="Network, Version=6.1.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\sharpdj\packages\Network.6.1.0.7\lib\net46\Network.dll</HintPath>
+      <HintPath>..\packages\Network.6.1.0.7\lib\net46\Network.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -91,6 +91,7 @@
     <Compile Include="RegisterPacket\Result.cs" />
     <Compile Include="Models\UserClient.cs" />
     <Compile Include="DataValidation.cs" />
+    <Compile Include="RoomOutsideUpdate\RoomOutsideUpdateRequest.cs" />
     <Compile Include="UpdateRoomData\Result.cs" />
     <Compile Include="UpdateRoomData\UpdateRoomDataRequest.cs" />
     <Compile Include="UpdateRoomData\UpdateRoomDataResponse.cs" />
@@ -98,8 +99,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Update\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
