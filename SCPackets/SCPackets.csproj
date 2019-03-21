@@ -75,6 +75,9 @@
     <Compile Include="CreateRoom\CreateRoomRequest.cs" />
     <Compile Include="CreateRoom\CreateRoomResponse.cs" />
     <Compile Include="CreateRoom\Container\Result.cs" />
+    <Compile Include="Disconnect\DisconnectRequest.cs" />
+    <Compile Include="Disconnect\DisconnectResponse.cs" />
+    <Compile Include="Disconnect\Result.cs" />
     <Compile Include="HandlerModel.cs" />
     <Compile Include="IClient.cs" />
     <Compile Include="Models\RoomOutsideModel.cs" />

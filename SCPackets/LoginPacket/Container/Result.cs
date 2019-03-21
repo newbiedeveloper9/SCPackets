@@ -6,5 +6,6 @@
         Error,
         CredentialsError,
         AlreadyLogged,
+        AlreadyLoggedError,
     }
 }
