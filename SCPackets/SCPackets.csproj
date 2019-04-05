@@ -46,6 +46,7 @@
     <Reference Include="Network, Version=6.1.0.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Network.6.1.0.7\lib\net46\Network.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -80,6 +81,7 @@
     <Compile Include="Disconnect\Result.cs" />
     <Compile Include="HandlerModel.cs" />
     <Compile Include="IClient.cs" />
+    <Compile Include="Models\ColorModel.cs" />
     <Compile Include="Models\RoomOutsideModel.cs" />
     <Compile Include="LoginPacket\LoginRequest.cs" />
     <Compile Include="LoginPacket\LoginResponse.cs" />
@@ -95,6 +97,9 @@
     <Compile Include="Models\UserClient.cs" />
     <Compile Include="DataValidation.cs" />
     <Compile Include="RoomOutsideUpdate\RoomOutsideUpdateRequest.cs" />
+    <Compile Include="SendRoomChatMessage\Result.cs" />
+    <Compile Include="SendRoomChatMessage\SendRoomChatMessageRequest.cs" />
+    <Compile Include="SendRoomChatMessage\SendRoomChatMessageResponse.cs" />
     <Compile Include="UpdateRoomData\Result.cs" />
     <Compile Include="UpdateRoomData\UpdateRoomDataRequest.cs" />
     <Compile Include="UpdateRoomData\UpdateRoomDataResponse.cs" />

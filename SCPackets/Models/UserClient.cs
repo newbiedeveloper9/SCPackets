@@ -23,20 +23,9 @@ namespace SCPackets.Models
         public Rank Rank => (Rank)RankTmp;
         public int RankTmp { get; set; }
 
-        protected bool Equals(UserClient other)
+        public bool Equals(UserClient other)
         {
             return Id == other.Id && string.Equals(Username, other.Username) && Rank == other.Rank;
-        }
-
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                var hashCode = Id.GetHashCode();
-                hashCode = (hashCode * 397) ^ (Username != null ? Username.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (int)Rank;
-                return hashCode;
-            }
         }
     }
 }
