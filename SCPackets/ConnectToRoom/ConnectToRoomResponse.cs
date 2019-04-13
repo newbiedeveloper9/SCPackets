@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Network.Attributes;
 using Network.Packets;
 
-namespace SCPackets.SendRoomChatMessage
+namespace SCPackets.ConnectToRoom
 {
-    [PacketRequest(typeof(SendRoomChatMessageRequest))]
-    public class SendRoomChatMessageResponse : ResponsePacket
+    [PacketRequest(typeof(ConnectToRoomRequest))]
+    public class ConnectToRoomResponse : ResponsePacket
     {
-        public SendRoomChatMessageResponse(Result result, RequestPacket packet) : base(packet)
+        public ConnectToRoomResponse(Result result, RequestPacket packet) : base(packet)
         {
             Result = result;
         }

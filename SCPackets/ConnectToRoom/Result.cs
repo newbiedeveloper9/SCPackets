@@ -1,8 +1,9 @@
-﻿namespace SCPackets.SendRoomChatMessage
+﻿namespace SCPackets.ConnectToRoom
 {
     public enum Result
     {
         Success,
+        AlreadyConnected,
         Error
     }
 }

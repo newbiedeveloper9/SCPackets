@@ -34,6 +34,7 @@ namespace SCPackets
         {
             //TODO: add logging
             Action?.Invoke(packet, connection);
+            Console.WriteLine($"packet handle {packet}");
         }
     }
 }

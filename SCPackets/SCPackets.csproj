@@ -72,6 +72,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectToRoom\ConnectToRoomRequest.cs" />
+    <Compile Include="ConnectToRoom\ConnectToRoomResponse.cs" />
+    <Compile Include="ConnectToRoom\Result.cs" />
     <Compile Include="CreateRoom\Container\RoomModel.cs" />
     <Compile Include="CreateRoom\CreateRoomRequest.cs" />
     <Compile Include="CreateRoom\CreateRoomResponse.cs" />
