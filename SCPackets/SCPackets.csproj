@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ConsoleTables, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ConsoleTables.2.2.0\lib\net40\ConsoleTables.dll</HintPath>
+    <Reference Include="ConsoleTables, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\sharpdj\packages\ConsoleTables.2.3.0\lib\net40\ConsoleTables.dll</HintPath>
     </Reference>
     <Reference Include="InTheHand, Version=10.2018.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\InTheHand.Pontoon.10.2018.3.19\lib\net452\InTheHand.dll</HintPath>
@@ -43,8 +43,8 @@
     <Reference Include="InTheHand.Net.Personal, Version=3.5.605.0, Culture=neutral, PublicKeyToken=ea38caa273134499, processorArchitecture=MSIL">
       <HintPath>..\packages\32feet.NET.3.5.0.0\lib\net\InTheHand.Net.Personal.dll</HintPath>
     </Reference>
-    <Reference Include="Network, Version=6.1.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Network.6.1.0.7\lib\net46\Network.dll</HintPath>
+    <Reference Include="Network, Version=6.1.2.15, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\SharpdjServer\packages\Network.6.1.2.15\lib\net46\Network.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -58,6 +58,9 @@
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\sharpdj\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -92,13 +95,15 @@
     <Compile Include="Models\TrackModel.cs" />
     <Compile Include="NewRoomCreated\NewRoomCreatedRequest.cs" />
     <Compile Include="NotLoggedIn\NotLoggedInRequest.cs" />
+    <Compile Include="Ping\PingRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Rank.cs" />
     <Compile Include="RegisterPacket\RegisterRequest.cs" />
     <Compile Include="RegisterPacket\RegisterResponse.cs" />
     <Compile Include="RegisterPacket\Result.cs" />
-    <Compile Include="Models\UserClient.cs" />
+    <Compile Include="Models\UserClientModel.cs" />
     <Compile Include="DataValidation.cs" />
+    <Compile Include="RoomChatNewMessageClient\RoomChatNewMessageRequest.cs" />
     <Compile Include="RoomOutsideUpdate\RoomOutsideUpdateRequest.cs" />
     <Compile Include="SendRoomChatMessage\Result.cs" />
     <Compile Include="SendRoomChatMessage\SendRoomChatMessageRequest.cs" />

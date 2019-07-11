@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Media;
+using Network.Attributes;
 
 namespace SCPackets.Models
 {
@@ -31,11 +32,13 @@ namespace SCPackets.Models
             B = brush.Color.B;
         }
 
+
         public override string ToString()
         {
             return $"#{R:X2}{G:X2}{B:X2}";
         }
 
+        [PacketIgnoreProperty]
         public string GetHex => ToString();
     }
 }

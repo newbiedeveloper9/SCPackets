@@ -3,6 +3,7 @@
     public enum Result
     {
         Success,
+        NotInRoom,
         Error
     }
 }

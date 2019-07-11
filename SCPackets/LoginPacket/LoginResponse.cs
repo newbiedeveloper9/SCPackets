@@ -14,16 +14,13 @@ namespace SCPackets.LoginPacket
         public LoginResponse(Result result, LoginRequest request)
             : base(request)
         {
-            ResultTmp = (int)result;
+            Result = result;
         }
 
         public List<RoomOutsideModel> RoomOutsideModelList { get; set; } = new List<RoomOutsideModel>();
         public List<RoomModel> UserRoomList { get; set; } = new List<RoomModel>();
-        public UserClient User { get; set; } = new UserClient();
+        public UserClientModel User { get; set; } = new UserClientModel();
 
-        public int ResultTmp { get; set; }
-
-        [PacketIgnoreProperty]
-        public Result Result => (Result) ResultTmp;
+        public Result Result { get; set; }
     }
 }

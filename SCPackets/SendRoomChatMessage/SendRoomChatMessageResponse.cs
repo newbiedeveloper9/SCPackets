@@ -8,10 +8,9 @@ using Network.Packets;
 
 namespace SCPackets.SendRoomChatMessage
 {
-    [PacketRequest(typeof(SendRoomChatMessageRequest))]
-    public class SendRoomChatMessageResponse : ResponsePacket
+    public class SendRoomChatMessageResponse : RequestPacket
     {
-        public SendRoomChatMessageResponse(Result result, RequestPacket packet) : base(packet)
+        public SendRoomChatMessageResponse(Result result)
         {
             Result = result;
         }

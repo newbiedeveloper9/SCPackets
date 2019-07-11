@@ -2,14 +2,14 @@
 
 namespace SCPackets.Models
 {
-    public class UserClient
+    public class UserClientModel
     {
-        public UserClient()
+        public UserClientModel()
         {
 
         }
 
-        public UserClient(long id, string username, Rank rank)
+        public UserClientModel(long id, string username, Rank rank)
         {
             Id = id;
             Username = username;
@@ -23,7 +23,7 @@ namespace SCPackets.Models
         public Rank Rank => (Rank)RankTmp;
         public int RankTmp { get; set; }
 
-        public bool Equals(UserClient other)
+        public bool Equals(UserClientModel other)
         {
             return Id == other.Id && string.Equals(Username, other.Username) && Rank == other.Rank;
         }
