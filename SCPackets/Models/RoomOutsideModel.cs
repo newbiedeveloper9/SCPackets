@@ -10,8 +10,8 @@ namespace SCPackets.Models
         public int AmountOfPeople { get; set; }
         public int AmountOfAdministration { get; set; }
 
-        public TrackModel NextTrack { get; set; }
-        public TrackModel CurrentTrack { get; set; }
-        public TrackModel PreviousTrack { get; set; }
+        public TrackModel NextTrack { get; set; } = new TrackModel();
+        public TrackModel CurrentTrack { get; set; } = new TrackModel();
+        public TrackModel PreviousTrack { get; set; } = new TrackModel();
     }
 }

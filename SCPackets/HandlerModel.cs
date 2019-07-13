@@ -18,13 +18,10 @@ namespace SCPackets
         public Action<TReq, Connection> Action { get; set; }
         private readonly PacketReceivedHandler<TReq> _packetHandler;
         
-
         public HandlerModel()
         {
             _packetHandler = Handler;
         }
-
-
 
         public void RegisterPacket(Connection conn, bool loginRequired = false)
         {
@@ -38,7 +35,6 @@ namespace SCPackets
         private void Handler(TReq packet, Connection connection)
         {
             Action?.Invoke(packet, connection);
-            Console.WriteLine($"packet handle {packet}");
         }
     }
 }

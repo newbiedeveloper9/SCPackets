@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buffers\RoomUserListBufferRequest.cs" />
     <Compile Include="ConnectToRoom\ConnectToRoomRequest.cs" />
     <Compile Include="ConnectToRoom\ConnectToRoomResponse.cs" />
     <Compile Include="ConnectToRoom\Result.cs" />
