@@ -88,6 +88,7 @@
     <Compile Include="Disconnect\Result.cs" />
     <Compile Include="HandlerModel.cs" />
     <Compile Include="IClient.cs" />
+    <Compile Include="ListWrapper.cs" />
     <Compile Include="Models\ColorModel.cs" />
     <Compile Include="Models\RoomOutsideModel.cs" />
     <Compile Include="LoginPacket\LoginRequest.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="SendRoomChatMessage\Result.cs" />
     <Compile Include="SendRoomChatMessage\SendRoomChatMessageRequest.cs" />
     <Compile Include="SendRoomChatMessage\SendRoomChatMessageResponse.cs" />
+    <Compile Include="SpecialAfterInsertList.cs" />
     <Compile Include="UpdateRoomData\Result.cs" />
     <Compile Include="UpdateRoomData\UpdateRoomDataRequest.cs" />
     <Compile Include="UpdateRoomData\UpdateRoomDataResponse.cs" />
