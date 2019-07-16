@@ -38,10 +38,12 @@ namespace SCPackets
             foreach (var item in obj)
                 OnAfterAdd(new AfterAddEventArgs<TObj>(item));
         }
-        public void Remove(TObj obj)
+        public bool Remove(TObj obj)
         {
-            _list.Remove(obj);
+            var result = _list.Remove(obj);
             OnAfterRemove(new AfterRemoveEventArgs<TObj>(obj));
+
+            return result;
         }
         #endregion Implementation
 

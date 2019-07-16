@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Network.Attributes;
 using Network.Packets;
 using SCPackets.Models;
-using Server;
 
 namespace SCPackets.Buffers
 {

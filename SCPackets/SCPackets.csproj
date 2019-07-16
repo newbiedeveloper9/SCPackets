@@ -110,7 +110,6 @@
     <Compile Include="SendRoomChatMessage\Result.cs" />
     <Compile Include="SendRoomChatMessage\SendRoomChatMessageRequest.cs" />
     <Compile Include="SendRoomChatMessage\SendRoomChatMessageResponse.cs" />
-    <Compile Include="SpecialAfterInsertList.cs" />
     <Compile Include="UpdateRoomData\Result.cs" />
     <Compile Include="UpdateRoomData\UpdateRoomDataRequest.cs" />
     <Compile Include="UpdateRoomData\UpdateRoomDataResponse.cs" />
