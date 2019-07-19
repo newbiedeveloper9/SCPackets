@@ -75,11 +75,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buffers\SquareRoomBufferRequest.cs" />
     <Compile Include="Buffers\RoomUserListBufferRequest.cs" />
     <Compile Include="ConnectToRoom\ConnectToRoomRequest.cs" />
     <Compile Include="ConnectToRoom\ConnectToRoomResponse.cs" />
     <Compile Include="ConnectToRoom\Result.cs" />
-    <Compile Include="CreateRoom\Container\RoomModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
     <Compile Include="CreateRoom\CreateRoomRequest.cs" />
     <Compile Include="CreateRoom\CreateRoomResponse.cs" />
     <Compile Include="CreateRoom\Container\Result.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Disconnect\Result.cs" />
     <Compile Include="HandlerModel.cs" />
     <Compile Include="IClient.cs" />
+    <Compile Include="IHandlerModel.cs" />
     <Compile Include="ListWrapper.cs" />
     <Compile Include="Models\ColorModel.cs" />
     <Compile Include="Models\RoomOutsideModel.cs" />
@@ -95,7 +97,6 @@
     <Compile Include="LoginPacket\LoginResponse.cs" />
     <Compile Include="LoginPacket\Container\Result.cs" />
     <Compile Include="Models\TrackModel.cs" />
-    <Compile Include="NewRoomCreated\NewRoomCreatedRequest.cs" />
     <Compile Include="NotLoggedIn\NotLoggedInRequest.cs" />
     <Compile Include="Ping\PingRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,7 +107,6 @@
     <Compile Include="Models\UserClientModel.cs" />
     <Compile Include="DataValidation.cs" />
     <Compile Include="RoomChatNewMessageClient\RoomChatNewMessageRequest.cs" />
-    <Compile Include="RoomOutsideUpdate\RoomOutsideUpdateRequest.cs" />
     <Compile Include="SendRoomChatMessage\Result.cs" />
     <Compile Include="SendRoomChatMessage\SendRoomChatMessageRequest.cs" />
     <Compile Include="SendRoomChatMessage\SendRoomChatMessageResponse.cs" />

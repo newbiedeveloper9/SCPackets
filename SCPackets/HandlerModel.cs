@@ -10,7 +10,7 @@ using Network.Packets;
 
 namespace SCPackets
 {
-    public class HandlerModel<TReq> where TReq : Packet
+    public class HandlerModel<TReq> : IHandlerModel where TReq : Packet
     {
         /// <summary>
         /// If Action != null then invoke
@@ -23,7 +23,13 @@ namespace SCPackets
             _packetHandler = Handler;
         }
 
-        public void RegisterPacket(Connection conn, bool loginRequired = false)
+        public HandlerModel(Action<TReq, Connection> action)
+        {
+            _packetHandler = Handler;
+            Action = action;
+        }
+
+        public void RegisterPacket(Connection conn)
         {
             conn.RegisterStaticPacketHandler(_packetHandler);
         }

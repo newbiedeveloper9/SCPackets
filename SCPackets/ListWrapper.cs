@@ -10,76 +10,117 @@ namespace SCPackets
 {
     public class ListWrapper<TObj>
     {
-        private readonly List<TObj> _list;
+        public List<TObj> __nothing__ { get; set; }
 
         public ListWrapper()
         {
-            _list = new List<TObj>();
+            __nothing__ = new List<TObj>();
         }
 
         #region Implementation
-        public IReadOnlyCollection<TObj> GetList()
-        {
-            return _list.AsReadOnly();
-        }
+        [PacketIgnoreProperty] public int Count => __nothing__.Count();
+
+        public IReadOnlyCollection<TObj> GetList() =>
+            __nothing__.AsReadOnly();
 
         public void Add(TObj obj, bool onlyOneInstance = true)
         {
             if (onlyOneInstance)
-                if (_list.Contains(obj)) return;
+                if (__nothing__.Contains(obj)) return;
 
-            _list.Add(obj);
-            OnAfterAdd(new AfterAddEventArgs<TObj>(obj));
+            OnBeforeUpdate(new UpdateEventArgs(obj, UpdateEventArgs.UpdateState.Insert));
+            __nothing__.Add(obj);
+            OnAfterUpdate(new UpdateEventArgs(obj, UpdateEventArgs.UpdateState.Insert));
         }
-        public void AddRange(List<TObj> obj)
-        {
-            _list.AddRange(obj);
 
-            foreach (var item in obj)
-                OnAfterAdd(new AfterAddEventArgs<TObj>(item));
-        }
+        public void AddRange(List<TObj> obj, bool onlyOneInstance = true) =>
+            obj.ForEach((item) => Add(item, onlyOneInstance));
+
         public bool Remove(TObj obj)
         {
-            var result = _list.Remove(obj);
-            OnAfterRemove(new AfterRemoveEventArgs<TObj>(obj));
+            OnBeforeUpdate(new UpdateEventArgs(obj, UpdateEventArgs.UpdateState.Remove));
+            var result = __nothing__.Remove(obj);
+            OnAfterUpdate(new UpdateEventArgs(obj, UpdateEventArgs.UpdateState.Remove));
 
             return result;
         }
+
+        public void RemoveAll(List<TObj> obj) =>
+            obj.ForEach((item) => Remove(item));
+
         #endregion Implementation
 
         #region Events
-        public event EventHandler<AfterAddEventArgs<TObj>> AfterAdd;
-        protected virtual void OnAfterAdd(AfterAddEventArgs<TObj> e)
+        public event EventHandler<UpdateEventArgs> AfterUpdate;
+        protected virtual void OnAfterUpdate(UpdateEventArgs e)
+        {
+            var handler = AfterUpdate;
+            handler?.Invoke(this, e);
+
+            if(e.State == UpdateEventArgs.UpdateState.Remove)
+                OnAfterRemove(new AfterRemoveEventArgs(e.Item));
+            else
+                OnAfterAdd(new AfterAddEventArgs(e.Item));
+        }
+
+
+        public event EventHandler<UpdateEventArgs> BeforeUpdate;
+        protected virtual void OnBeforeUpdate(UpdateEventArgs e)
+        {
+            var handler = BeforeUpdate;
+            handler?.Invoke(this, e);
+        }
+
+        public event EventHandler<AfterAddEventArgs> AfterAdd;
+        protected virtual void OnAfterAdd(AfterAddEventArgs e)
         {
             var handler = AfterAdd;
             handler?.Invoke(this, e);
         }
 
-        public event EventHandler<AfterRemoveEventArgs<TObj>> AfterRemove;
-        protected virtual void OnAfterRemove(AfterRemoveEventArgs<TObj> e)
+        public event EventHandler<AfterRemoveEventArgs> AfterRemove;
+        protected virtual void OnAfterRemove(AfterRemoveEventArgs e)
         {
             var handler = AfterRemove;
             handler?.Invoke(this, e);
         }
 
-        public class AfterAddEventArgs<TEventArgObj> : AddingNewEventArgs
+        public class UpdateEventArgs : AddingNewEventArgs
         {
-            public AfterAddEventArgs(TEventArgObj item)
+            public UpdateEventArgs(TObj item, UpdateState state)
             {
                 Item = item;
+                State = state;
             }
 
-            public TEventArgObj Item { get; private set; }
+            public TObj Item { get; private set; }
+            public UpdateState State { get; private set; }
+
+            public enum UpdateState
+            {
+                Remove,
+                Insert
+            }
         }
 
-        public class AfterRemoveEventArgs<TEventArgObj> : AddingNewEventArgs
+        public class AfterAddEventArgs : AddingNewEventArgs
         {
-            public AfterRemoveEventArgs(TEventArgObj item)
+            public AfterAddEventArgs(TObj item)
             {
                 Item = item;
             }
 
-            public TEventArgObj Item { get; private set; }
+            public TObj Item { get; private set; }
+        }
+
+        public class AfterRemoveEventArgs : AddingNewEventArgs
+        {
+            public AfterRemoveEventArgs(TObj item)
+            {
+                Item = item;
+            }
+
+            public TObj Item { get; private set; }
         }
 
         #endregion Events
