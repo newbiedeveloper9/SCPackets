@@ -75,11 +75,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthKeyLogin\AuthKeyLoginRequest.cs" />
+    <Compile Include="AuthKeyLogin\AuthKeyLoginResponse.cs" />
+    <Compile Include="AuthKeyLogin\Result.cs" />
     <Compile Include="Buffers\SquareRoomBufferRequest.cs" />
     <Compile Include="Buffers\RoomUserListBufferRequest.cs" />
     <Compile Include="ConnectToRoom\ConnectToRoomRequest.cs" />
     <Compile Include="ConnectToRoom\ConnectToRoomResponse.cs" />
     <Compile Include="ConnectToRoom\Result.cs" />
+    <Compile Include="Models\LoginDataModel.cs" />
     <Compile Include="Models\RoomModel.cs" />
     <Compile Include="CreateRoom\CreateRoomRequest.cs" />
     <Compile Include="CreateRoom\CreateRoomResponse.cs" />

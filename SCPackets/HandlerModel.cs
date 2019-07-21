@@ -17,11 +17,6 @@ namespace SCPackets
         /// </summary>
         public Action<TReq, Connection> Action { get; set; }
         private readonly PacketReceivedHandler<TReq> _packetHandler;
-        
-        public HandlerModel()
-        {
-            _packetHandler = Handler;
-        }
 
         public HandlerModel(Action<TReq, Connection> action)
         {
