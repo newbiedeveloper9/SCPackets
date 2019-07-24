@@ -10,15 +10,12 @@ namespace SCPackets.SendRoomChatMessage
 {
     public class SendRoomChatMessageRequest : RequestPacket
     {
-        public SendRoomChatMessageRequest(ColorModel color, string message, int roomId)
+        public SendRoomChatMessageRequest(ColorModel color, string message)
         {
-            Color = color;
-            Message = message;
-            RoomId = roomId;
+            Post.Color = color;
+            Post.Message = message;
         }
 
-        public ColorModel Color { get; set; }
-        public string Message { get; set; }
-        public int RoomId { get; set; }
+        public RoomPostModel Post { get; set; } = new RoomPostModel();
     }
 }

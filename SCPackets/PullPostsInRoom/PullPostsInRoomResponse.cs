@@ -5,9 +5,10 @@ using SCPackets.Models;
 
 namespace SCPackets.PullPostsInRoom
 {
+    [PacketRequest(typeof(PullPostsInRoomRequest))]
     public class PullPostsInRoomResponse : RequestPacket
     {
-        public PullPostsInRoomResponse(Result result, PullPostsInRoomRequest packet)
+        public PullPostsInRoomResponse(Result result)
         {
             Result = result;
         }

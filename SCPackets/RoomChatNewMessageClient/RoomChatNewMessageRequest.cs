@@ -12,17 +12,15 @@ namespace SCPackets.RoomChatNewMessageClient
     public class RoomChatNewMessageRequest : SendRoomChatMessageRequest
     {
         public RoomChatNewMessageRequest(ColorModel color, string message, int roomId, UserClientModel author)
-            : base(color, message, roomId)
+            : base(color, message)
         {
-            Author = author;
+            Post.Author = author;
         }
 
         public RoomChatNewMessageRequest(SendRoomChatMessageRequest request, UserClientModel author)
-            : base(request.Color, request.Message, request.RoomId)
+            : base(request.Post.Color, request.Post.Message)
         {
-            Author = author;
+            Post.Author = author;
         }
-
-        public UserClientModel Author { get; set; }
     }
 }
