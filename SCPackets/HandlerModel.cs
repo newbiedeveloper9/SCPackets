@@ -35,7 +35,8 @@ namespace SCPackets
 
         private void Handler(TReq packet, Connection connection)
         {
-            Action?.Invoke(packet, connection);
+            Task.Factory.StartNew(() => Action.Invoke(packet, connection));
+            //Action.Invoke(packet, connection);
         }
     }
 }
