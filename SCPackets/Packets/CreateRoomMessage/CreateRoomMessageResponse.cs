@@ -1,10 +1,14 @@
-﻿using Network.Packets;
+﻿using Network.Attributes;
+using Network.Packets;
 
 namespace SCPackets.Packets.CreateRoomMessage
 {
-    public class CreateRoomMessageResponse : RequestPacket
+    [PacketRequest(typeof(CreateRoomMessageRequest))]
+
+    public class CreateRoomMessageResponse : ResponsePacket
     {
-        public CreateRoomMessageResponse(CreateRoomMessageResult result)
+        public CreateRoomMessageResponse(CreateRoomMessageResult result, RequestPacket request)
+            : base(request)
         {
             Result = result;
         }

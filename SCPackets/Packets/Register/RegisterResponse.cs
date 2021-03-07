@@ -9,11 +9,9 @@ namespace SCPackets.Packets.Register
         public RegisterResponse(RegisterResult result, RegisterRequest packet)
             : base(packet)
         {
-            Result = Result;
+            Result = result;
         }
 
         public RegisterResult Result { get; set; }
-
-        
     }
 }

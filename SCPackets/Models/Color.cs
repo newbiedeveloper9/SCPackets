@@ -22,14 +22,11 @@ namespace SCPackets.Models
             return this;
         }
 
-        public string GetHex()
-        {
-            return HexHelper.BytesToString(RGB);
-        }
+        public string GetHex => HexHelper.BytesToString(RGB);
 
         public override string ToString()
         {
-            return GetHex();
+            return GetHex;
         }
     }
 }

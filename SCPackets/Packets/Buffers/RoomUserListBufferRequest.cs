@@ -2,6 +2,7 @@
 using Network.Packets;
 using SCPackets.Models;
 using SharpDj.Common;
+using SharpDj.Common.ListWrapper;
 
 namespace SCPackets.Packets.Buffers
 {

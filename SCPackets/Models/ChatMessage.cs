@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SCPackets.Models
+﻿namespace SCPackets.Models
 {
     public class ChatMessage
     {
@@ -15,6 +9,6 @@ namespace SCPackets.Models
         public UserClient Author { get; set; }
         public Color Color { get; set; }
         public string Message { get; set; }
-        public int Id { get; set; }
+        public long Id { get; set; }
     }
 }
